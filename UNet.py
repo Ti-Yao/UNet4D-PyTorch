@@ -60,7 +60,7 @@ class ImageConvBlock(nn.Module):
         """
 
         for conv, norm in zip(self.convs, self.norms):
-            x = norm(self.act(conv(x)))
+            x = self.act(norm(conv(x)))
         return self.drop(x)
     
 
